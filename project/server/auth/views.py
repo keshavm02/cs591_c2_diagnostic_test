@@ -66,3 +66,18 @@ auth_blueprint.add_url_rule(
     view_func=registration_view,
     methods=['POST', 'GET']
 )
+
+def displayUsers():
+    # print("keshav is god")
+    final = ""
+    users = db.session.query(User).all()
+    print(db.session.query(User).all())
+    for user in users:
+        final += str(user.email) + "  "
+    return final
+
+auth_blueprint.add_url_rule(
+    '/users/index',
+    view_func=displayUsers,
+    methods=['GET']
+)
