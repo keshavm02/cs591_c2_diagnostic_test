@@ -68,7 +68,6 @@ auth_blueprint.add_url_rule(
 )
 
 def displayUsers():
-    # print("keshav is god")
     final = ""
     users = db.session.query(User).all()
     print(db.session.query(User).all())
@@ -83,10 +82,10 @@ auth_blueprint.add_url_rule(
 )
 
 def homePage():
-    return('Welcome to Keshav\'s API, please visit the "/users/index" route to get a list of registered users')
+    return("Welcome to Keshav's API, please visit the \"/users/index\" route to get a list of registered users")
 
 auth_blueprint.add_url_rule(
     '/',
-    view_func=homePage(),
+    view_func=homePage,
     methods=['GET']
 )
