@@ -81,3 +81,12 @@ auth_blueprint.add_url_rule(
     view_func=displayUsers,
     methods=['GET']
 )
+
+def homePage():
+    return('Welcome to Keshav\'s API, please visit the "/users/index" route to get a list of registered users')
+
+auth_blueprint.add_url_rule(
+    '/',
+    view_func=homePage(),
+    methods=['GET']
+)
